@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>موقعي الشخصي</title>
+    <style>
+        /* CSS للتصميم */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #007bff;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #0056b3;
+            padding: 10px;
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        main {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        section {
+            margin-bottom: 20px;
+            background-color: white;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+        button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            max-width: 400px;
+        }
+        input, textarea {
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .menu-toggle {
+            display: none;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                display: none;
+            }
+            nav.show {
+                display: flex;
+            }
+            .menu-toggle {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>اللوجو: موقعي الشخصي</h1>
+        <button class="menu-toggle" onclick="toggleMenu()">قائمة التنقل</button>
+    </header>
+
+    <!-- Navigation -->
+    <nav id="nav-menu">
+        <a href="#home">الرئيسية</a>
+        <a href="#about">عني</a>
+        <a href="#services">الخدمات</a>
+        <a href="#contact">التواصل</a>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <section id="home">
+            <h2>المحتوى الأساسي</h2>
+            <p>مرحباً بك في موقعي! هنا بعض النصوص والصور.</p>
+            <img src="https://via.placeholder.com/300" alt="صورة مثالية" style="max-width: 100%; height: auto;">
+            <video controls style="max-width: 100%;">
+                <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                متصفحك لا يدعم الفيديو.
+            </video>
+        </section>
+
+        <section id="about">
+            <h2>عني</h2>
+            <p>أنا مطور ويب، أحب بناء مواقع جميلة.</p>
+        </section>
+
+        <section id="services">
+            <h2>الخدمات</h2>
+            <ul>
+                <li>تصميم مواقع</li>
+                <li>تطوير تطبيقات</li>
+                <li>استشارات تقنية</li>
+            </ul>
+        </section>
+
+        <section id="contact">
+            <h2>التواصل</h2>
+            <form id="contact-form">
+                <input type="text" placeholder="اسمك" required>
+                <input type="email" placeholder="بريدك الإلكتروني" required>
+                <textarea placeholder="رسالتك" required></textarea>
+                <button type="submit">إرسال</button>
+            </form>
+            <p>أو اشترك في النشرة: <button onclick="alert('تم الاشتراك!')">اشتراك</button></p>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>بيانات التواصل: email@example.com | هاتف: 123-456-789</p>
+        <p>روابط مهمة: <a href="#" style="color: white;">سياسة الخصوصية</a></p>
+        <p>&copy; 2023 حقوق الملكية محفوظة.</p>
+        <p>تابعنا على: <a href="#" style="color: white;">فيسبوك</a> | <a href="#" style="color: white;">تويتر</a></p>
+    </footer>
+
+    <script>
+        // JavaScript للتفاعل
+        function toggleMenu() {
+            const nav = document.getElementById('nav-menu');
+            nav.classList.toggle('show');
+        }
+
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert('تم إرسال الرسالة بنجاح! (في الواقع، ده يحتاج Back-End للإرسال الحقيقي)');
+            // هنا يمكن إضافة كود لإرسال البيانات إلى السيرفر (مثل fetch API)
+        });
+    </script>
+
+</body>
+</html>
